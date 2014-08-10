@@ -2,7 +2,7 @@
 module Helpers
   def run_concert_with_input(*inputs)
     shell_output = ""
-    IO.popen('DB=test ./zss', 'r+') do |pipe|
+    IO.popen('DB=test ./concert', 'r+') do |pipe|
       inputs.each do |input|
         pipe.puts input
       end

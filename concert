@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require_relative 'lib/environment'
+Environment.environment = ENV["DB"] || "development"
+
+require_relative 'lib/router'
+
+def clean_gets
+  (gets || "").chomp
+end
+
+puts "1. Add New Concert\n"
+puts "2. View Concerts\n"
+puts "3. View Totals"
+
+Router.navigate_main_menu
