@@ -28,12 +28,15 @@ RSpec.describe "Adding Concerts", :integration do
 		context "valid input" do
 			let!(:full_output){ run_concert_with_input("1", "Motion City Soundtrack", "Newport Music Hall", "4/14/2015") }
 			it "should print a success message after getting all inputs" do
-				pending "strings seemingly match"
-				expect(full_output).to include("The Motion City Soundtrack concert at Newport Music Hall on 4/14/2015 has been saved.")
+				expect(full_output).to include("The Motion City Soundtrack concert at Newport Music Hall on 04/14/2015 has been saved.")
 			end
 
 			it "saves a concert with correct attributes" do
 				expect(Concert.count).to eq 1
+			end
+
+			it "should return last saved concert" do
+				expect(Concert.last.headliner).to include("Motion")
 			end
 		end
 
