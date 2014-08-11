@@ -4,6 +4,7 @@ class CreateConcerts < ActiveRecord::Migration
 			t.string :headliner
 			t.string :venue
 			t.datetime :date
+			t.integer :profit
 		end
 	end
 end

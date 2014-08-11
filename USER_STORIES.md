@@ -54,7 +54,7 @@ Usage: ./concert (corresponding digit)
 **Acceptance Criteria:**
 
 * User selects a concert (via it's display number) to view it's details
-* Displays the concert Headliner, Venue, Date
+* Displays the concert Headliner, Venue, Date, Profit
 * User is prompted to view Expenses or Income
 
 ## User Edits Individual Concert Stats

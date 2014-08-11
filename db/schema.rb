@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140807115500) do
     t.string   "headliner"
     t.string   "venue"
     t.datetime "date"
+    t.integer  "profit"
   end
 
 end

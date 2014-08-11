@@ -25,10 +25,6 @@ class ConcertsController
 		puts "========"
 		puts "CONCERTS"
 		puts "========"
-		# puts "The concerts are #{self.concerts}"
-		# puts self.concerts
-		# puts "the last concerts is #{Concert.last}"
-		# puts "after"
 		if self.concerts.empty?
 			puts "There are currently no concerts."
 		else
@@ -36,7 +32,32 @@ class ConcertsController
 				puts "#{index + 1}. #{concert.headliner} / #{concert.venue} / #{concert.date.strftime('%m/%d/%Y')}"
 			end
 		end
+		Router.navigate_concert_list
 	end
+
+	def self.view(path_number)
+		concert = self.concerts[path_number - 1]
+		if concert
+			puts "Headliner: #{concert.headliner}"
+			puts "Venue: #{concert.venue}"
+			puts "Date: #{concert.date.strftime('%m/%d/%Y')}"
+			if concert.profit
+				puts "Profit: concert.profit"
+			else
+				puts "Profit: 0"
+			end
+			puts "========"
+			puts "FINANCES"
+			puts "========"
+			puts "1. Expenses"
+			puts "2. Income"
+			# Router.navigate_finance_menu(concert)
+		else
+			puts "Sorry, that concert doesn't exist."
+		end
+	end
+
+	private
 
 	def self.concerts
 		concerts ||= Concert.all
