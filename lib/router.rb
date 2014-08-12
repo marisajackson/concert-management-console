@@ -26,6 +26,8 @@ class Router
 		case command
 		when "1"
 			ExpensesController.view(concert)
+		when "2"
+			IncomesController.view(concert)
 		end
 
 	end
