@@ -21,10 +21,13 @@ class Router
 		end
 	end
 
-	# def self.navigate_finance_menu(concert)
-	# 	command = clean_gets
+	def self.navigate_finance_menu(concert)
+		command = clean_gets
+		case command
+		when "1"
+			ExpensesController.view(concert)
+		end
 
-
-	# end
+	end
 
 end

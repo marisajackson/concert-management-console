@@ -5,6 +5,7 @@ class CreateConcerts < ActiveRecord::Migration
 			t.string :venue
 			t.datetime :date
 			t.integer :profit
+			t.references :expenses
 		end
 	end
 end

@@ -51,7 +51,7 @@ class ConcertsController
 			puts "========"
 			puts "1. Expenses"
 			puts "2. Income"
-			# Router.navigate_finance_menu(concert)
+			Router.navigate_finance_menu(concert)
 		else
 			puts "Sorry, that concert doesn't exist."
 		end
