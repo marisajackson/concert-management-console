@@ -40,4 +40,12 @@ class Router
 		end
 	end
 
+	def self.navigate_incomes_menu(concert)
+		command = clean_gets
+		case command
+		when "add"
+			IncomesController.add(concert)
+		end
+	end
+
 end

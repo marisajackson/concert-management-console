@@ -1,5 +1,19 @@
 class IncomesController
 
+	def self.add(concert)
+		puts "You are now adding an income to the #{concert.headliner} concert."
+		puts "What type of income would you like to add?"
+		name = clean_gets
+		puts "What is the income amount?"
+		amount = clean_gets
+		income = Income.create(name: name, amount: amount.to_i, concert: concert)
+		if income.new_record?
+			puts income.errors.full_messages
+		else
+			puts "The #{name} income has been added to the #{concert.headliner} concert in the amount of $#{amount}."
+		end
+	end
+
 	def self.view(concert)
 		total = 0;
 		puts "======"
@@ -15,7 +29,7 @@ class IncomesController
 			puts "Total: $#{total}"
 		end
 		puts "Type 'add' if you would like to add an income."
-		# Router.navigate_incomes_menu(concert)
+		Router.navigate_incomes_menu(concert)
 	end
 
 end
