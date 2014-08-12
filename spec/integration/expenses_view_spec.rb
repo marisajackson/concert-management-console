@@ -5,10 +5,10 @@ RSpec.describe "Viewing the Expenses menu", :integration do
 
 	context "expenses exists for concert" do
 		before do
-			Expense.create!(name: "talent", amount: 1000, concert: concert2)
-			Expense.create!(name: "staff", amount: 500, concert: concert2)
+			Expense.create(name: "talent", amount: 1000, concert: concert2)
+			Expense.create(name: "staff", amount: 500, concert: concert2)
 		end
-		
+
 		it "should show list of current expenses" do
 			expected = "1. Talent: $1000\n" +
 								 "2. Staff: $500"

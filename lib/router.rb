@@ -30,4 +30,12 @@ class Router
 
 	end
 
+	def self.navigate_expenses_menu(concert)
+		command = clean_gets
+		case command
+		when "add"
+			ExpensesController.add(concert)
+		end
+	end
+
 end
