@@ -6,6 +6,8 @@ class Router
 			ConcertsController.add
 		when "2"
 			ConcertsController.list
+		when "3"
+			ConcertsController.totals
 		else
 			puts "I don't know the '#{command}' command."
 		end

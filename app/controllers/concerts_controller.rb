@@ -42,7 +42,7 @@ class ConcertsController
 			puts "Venue: #{concert.venue}"
 			puts "Date: #{concert.date.strftime('%m/%d/%Y')}"
 			if concert.profit
-				puts "Profit: concert.profit"
+				puts "Profit: $#{concert.profit}"
 			else
 				puts "Profit: 0"
 			end
@@ -55,6 +55,15 @@ class ConcertsController
 		else
 			puts "Sorry, that concert doesn't exist."
 		end
+	end
+
+	def self.totals
+		puts "======"
+		puts "TOTALS"
+		puts "======"
+		puts "Expenses: $#{Expense.sum(:amount)}"
+		puts "Income: $#{Income.sum(:amount)}"
+		puts "Profit: $#{Income.sum(:amount)-Expense.sum(:amount)}"
 	end
 
 	private
